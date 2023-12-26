@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ teacher.name }}</title>
+</head>
+<body>
+    <h1>{{ teacher.name }}</h1>
+    <h2>Ratings</h2>
+    {% if teacher.ratings %}
+        <ul>
+            {% for rating in teacher.ratings %}
+                <li>Rating: {{ rating.rating }} - Comment: {{ rating.comment }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>This teacher has no ratings yet.</p>
+    {% endif %}
+
+    <h2>Rate this Teacher</h2>
+    <form action="{{ url_for('rate_teacher', teacher_id=teacher.id) }}" method="post">
+        <label for="rating">Rating:</label>
+        <input type="text" id="rating" name="rating" required>
+        <label for="comment">Comment:</label>
+        <textarea id="comment" name="comment" required></textarea>
+        <button type="submit">Submit Rating</button>
+    </form>
+    <a href="{{ url_for('index') }}">Back to list of teachers</a>
+</body>
+</html>
