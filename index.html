@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选啥课</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>选啥课</h1>
+    </header>
+    <main>
+        <section id="search-section">
+            <input type="text" id="search-input" placeholder="搜索教授或者学校">
+            <button id="search-button">搜索</button>
+        </section>
+        <section id="professor-list">
+            <!-- Professors and ratings will be displayed here -->
+        </section>
+        <section id="add-rating-section">
+            <h2>开始你的评价</h2>
+            <form id="rating-form">
+                <input type="text" id="professor-name" placeholder="教授姓名" required>
+                <input type="text" id="school-name" placeholder="学校" required>
+                <textarea id="rating-comment" placeholder="你的评价" required></textarea>
+                <button type="submit">提交你的评价</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 XSK. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
